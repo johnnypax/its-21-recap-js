@@ -13,3 +13,6 @@ for (let n of numeri){
 console.log(somma);
 
 //TASK: Fare la media di questo array: let numeri = [2,5,7,9,10];
+
+let media = somma / numeri.length;
+console.log(`Valore della media: ${media}`);
