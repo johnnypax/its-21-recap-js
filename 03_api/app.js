@@ -32,4 +32,16 @@ app.get("/persone", (req, res) => {
     res.json(elenco)
 })
 
-// GET - 
+// GET - http://localhost:4000/persone/PCAGNN
+app.get("/persone/:codFis", (req, res) => {
+    let codice_fiscale = req.params.codFis;
+
+    for(let [indice, oggetto] of elenco.entries()){
+        if(oggetto.cod_fis == codice_fiscale){
+            res.json(oggetto)
+            return
+        }
+    }
+
+    res.status(404).json();
+})
