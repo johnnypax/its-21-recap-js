@@ -16,15 +16,20 @@ let elenco = [
     {
         nome: "Giovanni",
         cognome: "Pace",
-        eta: 38
+        eta: 38,
+        cod_fis: "PCAGNN"
     },
     {
         nome: "Valeria",
         cognome: "Verdi",
-        eta: 25
+        eta: 25,
+        cod_fis: "VLRVRD"
     },
 ];
 
+// GET - http://localhost:4000/persone
 app.get("/persone", (req, res) => {
     res.json(elenco)
 })
+
+// GET - 
