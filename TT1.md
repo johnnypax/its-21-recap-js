@@ -1,28 +1,53 @@
 **1.**   **Which of the following is not a common type of malware?**
+
 a.      Spyware
+
 b.      Bluetooth
+
 c.      Worm
+
 d.      Virus
 
+ 
+
 **2.**   **Cos’è GIT?**
+
+ 
+
 a.      Un linguaggio di programmazione
+
 b.      Un sistema di versionamento distribuito
+
 c.      Un database relazionale
+
 d.      Un editor di testo
+
+ 
 
 **3.**   **Quale delle seguenti è una corretta dichiarazione di una variabile intera in C#?**
 
+ 
+
 a.     int number = 10;
+
 b.     integer number = 10;
+
 c.     var number = “10”;
+
 d.     num number = 10;
 
  
 
 **4.**   **In Angular, cosa è un componente?**
+
+ 
+
 a.           Un template HTML che definisce la struttura della pagina
+
 b.           Una classe TypeScript che gestisce la logica e i dati di un template
+
 c.           Un servizio che fornisce dati o logica a diversi componenti
+
 d.           Un modulo che importa e aggrega componenti e servizi
 
 **5.**   **Which of the following is used to repeat a set of instructions a certain number of** 
