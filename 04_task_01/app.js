@@ -1,16 +1,19 @@
+//Giovanni Pace
 const express = require("express")
 const app = express()
 
-const indirizzo = "127.0.0.1"
-const porta = 4000
+const indirizzo = "127.0.0.1"       //Indirizzo non variabile nel tempo
+const porta = 4000                  
 
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
+//Giovanni Pace
 app.listen(porta, indirizzo, () => {
     console.log(`Sono in ascolto su http://${indirizzo}:${porta}`)
 })
 
+//Mock
 let biblioteca = [
   {
     "titolo": "Harry Potter e la Pietra Filosofale",
@@ -87,4 +90,50 @@ app.get("/libri/anno/:annoRicerca", (req, res) => {
             risultato.push(libro)
 
     res.json(risultato)
+})
+
+app.post("/libri", (req, res) => {
+  let nuovoLibro = {
+    titolo: req.body.titolo,
+    descrizione: req.body.descrizione,
+    isbn: req.body.isbn,
+    anno: req.body.anno,
+    autore: req.body.autore
+  }
+
+  biblioteca.push(nuovoLibro);
+
+  res.status(201).json();
+})
+
+app.delete("/libri/:isbnDaEliminare", (req, res) => {
+  let isbn_eliminazione = req.params.isbnDaEliminare;
+
+  for(let [indice, libro] of biblioteca.entries()){
+    if(libro.isbn == isbn_eliminazione){
+      biblioteca.splice(indice, 1)
+      res.status(200).json()
+      return
+    }
+  }
+
+  res.status(404).json()
+})
+
+app.put("/libri/:isbnDaModificare", (req, res) => {
+  let isbn_modifica = req.params.isbnDaModificare
+
+  for(let [indice, libro] of biblioteca.entries()){
+    if(libro.isbn == isbn_modifica){
+      libro.titolo = req.body.titolo ? req.body.titolo : libro.titolo;
+      libro.descrizione = req.body.descrizione ? req.body.descrizione : libro.descrizione;
+      libro.anno = req.body.anno ? req.body.anno : libro.anno;
+      libro.autore = req.body.autore ? req.body.autore : libro.autore;
+
+      res.status(200).json();
+      return
+    }
+  }
+
+  res.status(400).json()
 })
