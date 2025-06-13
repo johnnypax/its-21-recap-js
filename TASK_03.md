@@ -40,7 +40,7 @@ Inserisce un nuovo paziente nel sistema.
   "nome": "Maria",
   "cognome": "Bianchi",
   "codiceFiscale": "BNCMRA90A01H501Z",
-  "dataNascita": "1990-01-01",
+  "eta": 38,
   "telefono": "3456789012",
   "email": "maria.bianchi@example.com"
 }
